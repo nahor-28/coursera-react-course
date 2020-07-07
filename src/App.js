@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './components/menuComponent';
 import { DISHES } from './shared/dishes';
@@ -18,12 +17,11 @@ class App extends Component {
         <Navbar dark color="primary">
           <div className="container">
             <NavbarBrand href="/">
-              <img src={logo} className="App-logo" alt="logo"/>
-              React
+              Ristorante Con Fusion
             </NavbarBrand>
           </div>
         </Navbar>
-        <Menu dishes={ this.state.food }/>
+        <Menu dishes={ this.state.food } />
       </div>
     );
   }
