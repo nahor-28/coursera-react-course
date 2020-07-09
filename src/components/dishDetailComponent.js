@@ -3,11 +3,7 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class DishDetail extends Component {
-    // constructor(props) {
-    //     super(props);
-        
-    // }
-      
+
     renderDish(dish) {
 
             if (dish != null)
@@ -67,10 +63,10 @@ class DishDetail extends Component {
                
                 <div className="row">
                     <div  className="col-12 col-md-5 m-1">
-                        {this.renderDish(this.props.selectedDish)}
+                        {this.renderDish(this.props.dish)}
                     </div>
                     <div  className="col-12 col-md-5 m-1">
-                        {this.renderComments(this.props.selectedDish)}
+                        {this.renderComments(this.props.dish)}
                     </div>
                 </div>
             </div>
