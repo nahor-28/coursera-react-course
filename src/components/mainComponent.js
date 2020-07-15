@@ -3,6 +3,8 @@ import Menu from './MenuComponent';
 import { DISHES } from '../shared/dishes';
 import DishDetail from './DishDetailComponent';
 import { Navbar, NavbarBrand } from 'reactstrap';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 
 
 class Main extends Component {
@@ -12,27 +14,21 @@ class Main extends Component {
           food: DISHES,
           selectedDish: null
         };
-    }
+}
+
     onDishSelect(dishId) {
-        this.setState({ selectedDish: dishId});
-      }
-    render() {
-        
+        this.setState({ selectedDish: dishId });
+    }
+
+    render() {    
         return(
             <div>
-                <Navbar dark color="primary">
-                    <div className="container">
-                        <NavbarBrand href="/">
-                        Ristorante Con Fusion
-                        </NavbarBrand>
-                    </div>
-                </Navbar>
-                <Menu dishes={this.state.food} onClick={(dishId) => this.onDishSelect(dishId)} />
-                <DishDetail dish={this.state.food.filter((dish) => dish.id === this.state.selectedDish)[0]} />
+                <Header />
+                <Menu dishes={ this.state.food } onClick={(dishId) => this.onDishSelect(dishId) } />
+                <DishDetail dish={ this.state.food.filter((dish) => dish.id === this.state.selectedDish)[0] } />
+                <Footer />
             </div>
-
         )
-
     }
 }
 
