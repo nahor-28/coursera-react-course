@@ -44,7 +44,7 @@ import { Link } from 'react-router-dom';
                                 })
                         }
                     </ul>
-                    <Button>Click Me</Button>
+                    <Button color="primary">Click Me</Button>
                 </div>               
             );
         }            
