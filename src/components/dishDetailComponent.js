@@ -26,7 +26,7 @@ import { baseUrl } from '../shared/baseUrl';
 
         handleSubmit(values) {
             console.log('Current State is: ' + JSON.stringify(values));
-            this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);        }
+            this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);        }
     
         render() {
             return(
@@ -117,7 +117,7 @@ import { baseUrl } from '../shared/baseUrl';
             );
     };
 
-    function RenderComments({comments, addComment, dishId}) {
+    function RenderComments({comments, postComment, dishId}) {
             return(
                 <div className="col-12 col-md-5 m-1">
                     <h4>Comments</h4>
@@ -142,7 +142,7 @@ import { baseUrl } from '../shared/baseUrl';
                                 })
                         }
                     </ul>
-                    <CommentForm dishId={dishId} addComment={addComment} />
+                    <CommentForm dishId={dishId} postComment={postComment} />
                 </div>               
             );
         }            
@@ -182,7 +182,7 @@ const DishDetail = (props) => {
                 <div className="row">
                         <RenderDish dish={props.dish} />
                         <RenderComments comments={props.comments} 
-                         addComment={props.addComment}
+                         postComment={props.postComment}
                          dishId={props.dish.id} />
                 </div>
             </div>
